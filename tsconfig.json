@@ -1,65 +1,86 @@
-// {
-//   "compilerOptions": {
-//     "target": "es5",
-//     "lib": ["dom", "dom.iterable", "esnext"],
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "noEmit": true,
-//     "esModuleInterop": true,
-//     "module": "esnext",
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "jsx": "preserve",
-//     "incremental": true
-//   },
-//   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-//   "exclude": ["node_modules"]
-// }
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "noImplicitAny": false,
-    "moduleResolution": "node",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "strict": true,
+    "noImplicitAny":false,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
     "paths": {
       "@styles/*": [
         "styles/*"
+      ],
+      "@assets/*": [
+        "styles/*"
+      ],
+      "@pages/*": [
+        "pages/*"
       ]
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "src",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
+
+
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "target": "ESNext",
+//     "useDefineForClassFields": true,
+//     "noImplicitAny": false,
+//     "moduleResolution": "node",
+//     "lib": [
+//       "DOM",
+//       "DOM.Iterable",
+//       "ESNext"
+//     ],
+//     "allowJs": true,
+//     "skipLibCheck": false,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "module": "ESNext",
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "noEmit": true,
+//     "jsx": "preserve",
+//     "paths": {
+//       "@styles/*": [
+//         "styles/*"
+//       ],
+//       "@assets/*": [
+//         "styles/*"
+//       ],
+//       "@pages/*": [
+//         "pages/*"
+//       ]
+//     },
+//     "incremental": true
+//   },
+//   "include": [
+//     "next-env.d.ts",
+//     "src",
+//     "**/*.ts",
+//     "**/*.tsx"
+//   ],
+//   "references": [
+//     {
+//       "path": "./tsconfig.node.json"
+//     }
+//   ],
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }

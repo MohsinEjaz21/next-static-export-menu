@@ -2,7 +2,7 @@
 import MenuClose from "assets/icons/fa-mobile-close.svg";
 import MenuOpen from "assets/icons/fa-mobile-open.svg";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MENU_DATA } from "../../MenuData";
 const MOBILE_BREAK_POINT = 1024;
 
@@ -60,8 +60,6 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const navRef: any = useRef(null);
   const headerRef: any = useRef(null);
-  const initialRender = useRef(true);
-
   const data = MENU_DATA;
 
   const handleResize = () => {

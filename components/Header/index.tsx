@@ -128,8 +128,6 @@ function Header() {
   }
 
   return (
-    <>
-        {/* <pre>{JSON.stringify(btnStyle)}</pre> */}
     <header className="header-sec fixed-nav" ref={headerRef}>
       <img className="logo" src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/us/en/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt="Kyndryl logo" />
       <nav className="navbar" ref={navRef}>
@@ -146,8 +144,6 @@ function Header() {
         {isMobileMenuOpen && <MenuClose />}
       </div>
     </header >
-    </>
-
   )
 }
 

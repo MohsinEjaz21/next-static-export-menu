@@ -24,7 +24,10 @@
       ],
       "@pages/*": [
         "pages/*"
-      ]
+      ],
+      "@components/*": [
+        "components/*"
+      ],
     },
     "incremental": true
   },

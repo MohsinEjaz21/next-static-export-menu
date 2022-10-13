@@ -2,15 +2,19 @@
 import MenuClose from "assets/icons/fa-mobile-close.svg";
 import MenuOpen from "assets/icons/fa-mobile-open.svg";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { MENU_DATA } from "../../MenuData";
 const MOBILE_BREAK_POINT = 1024;
+
+const isMobile = () => {
+  return !(window.innerWidth > MOBILE_BREAK_POINT);
+}
 
 function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
 
   function handleLinkClick() {
-    if (window.innerWidth <= MOBILE_BREAK_POINT) {
+    if (isMobile()) {
       mobileHoverEvents(buttonRef);
       mobileHoverSubMenuBtn(buttonRef);
     }
@@ -52,10 +56,11 @@ function mobileHoverSubMenuBtn(buttonRef: any) {
   }
 }
 
-function Index() {
+function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const navRef: any = useRef(null);
   const headerRef: any = useRef(null);
+  const initialRender = useRef(true);
 
   const data = MENU_DATA;
 
@@ -71,17 +76,24 @@ function Index() {
       setIsMobileMenuOpen(true)
     } else {
       headerRef.current.className = "header-sec mobile"
-      // setIsMobileMenuOpen(false)
+      setIsMobileMenuOpen(false)
     }
   }
 
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize, false);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   useEffect(() => {
-    handleMenuToggle(isMobileMenuOpen)
+    if(isMobile()){
+     handleMobileMenuToggle(isMobileMenuOpen)
+    }else{
+      document.querySelector("main")!.style.display = "block"
+    }
   }, [isMobileMenuOpen]);
 
   function showMenu(menu: any[], id = 'nav__anchor', count = 0) {
@@ -100,11 +112,13 @@ function Index() {
       </ul>
     )
   }
-  function handleMenuToggle(isMenuOpened) {
+  function handleMobileMenuToggle(isMenuOpened) {
     if (!isMenuOpened) {
       navRef.current.style.display = "none"
+      document.querySelector("main")!.style.display = "block"
     } else {
       navRef.current.style.display = "flex"
+      document.querySelector("main")!.style.display = "none"
     }
   }
 
@@ -129,4 +143,4 @@ function Index() {
   )
 }
 
-export default Index
+export default Header

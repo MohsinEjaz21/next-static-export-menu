@@ -69,11 +69,11 @@ function Header() {
       className: headerRef.current.className
     });
     if (window.innerWidth > MOBILE_BREAK_POINT) {
-      headerRef.current.className = "header-sec desktop"
+      headerRef.current.className = "header-sec fixed-nav desktop"
       navRef.current.style.display = "flex"
       setIsMobileMenuOpen(true)
     } else {
-      headerRef.current.className = "header-sec mobile"
+      headerRef.current.className = "header-sec fixed-nav mobile"
       setIsMobileMenuOpen(false)
     }
   }
@@ -121,7 +121,7 @@ function Header() {
   }
 
   return (
-    <header className="header-sec" ref={headerRef}>
+    <header className="header-sec fixed-nav" ref={headerRef}>
       <img className="logo" src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/us/en/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt="Kyndryl logo" />
       <nav className="navbar" ref={navRef}>
         {data.menu.map((e, i) => (

@@ -76,6 +76,15 @@
     @extend .custom-border;
   }
 
+  &.fixed-nav {
+    top: 0px;
+    position: fixed;
+    background: white;
+    width: 100%;
+  }
+
+
+
   // &&&&&&&&&&&&&&
   //    MOBILE
   // &&&&&&&&&&&&&&
@@ -85,9 +94,10 @@
     grid-auto-flow: column;
     height: 85px;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     align-items: center;
+    padding: 0 20px;
 
     .menu-list,
     .menu-sub-list {

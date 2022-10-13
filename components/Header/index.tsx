@@ -1,6 +1,7 @@
 
-import MenuClose from "assets/icons/fa-mobile-close.svg";
-import MenuOpen from "assets/icons/fa-mobile-open.svg";
+import MenuClose from "public/assets/icons/fa-mobile-close.svg";
+import MenuOpen from "public/assets/icons/fa-mobile-open.svg";
+import underlineSvg from 'public/assets/icons/underline.svg'
 
 import { useEffect, useRef, useState } from "react";
 import { MENU_DATA } from "../../MenuData";
@@ -10,7 +11,8 @@ const isMobile = () => {
   return !(window.innerWidth > MOBILE_BREAK_POINT);
 }
 
-function CreateLink({ text, ...props }) {
+
+function CreateLink({ text,...props }) {
   const buttonRef: any = useRef(null);
 
   function handleLinkClick() {
@@ -21,7 +23,7 @@ function CreateLink({ text, ...props }) {
   }
 
   return (
-    <button className="menu-button" ref={buttonRef} onClick={() => { handleLinkClick() }} >
+    <button className="menu-button" ref={buttonRef} onClick={() => { handleLinkClick() }}  >
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}
     </button>
@@ -87,12 +89,13 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    if(isMobile()){
-     handleMobileMenuToggle(isMobileMenuOpen)
-    }else{
+    if (isMobile()) {
+      handleMobileMenuToggle(isMobileMenuOpen)
+    } else {
       document.querySelector("main")!.style.display = "block"
     }
   }, [isMobileMenuOpen]);
+
 
   function showMenu(menu: any[], id = 'nav__anchor', count = 0) {
     const className = count === 0 ? 'menu-list ' : 'menu-sub-list'
@@ -110,6 +113,8 @@ function Header() {
       </ul>
     )
   }
+
+
   function handleMobileMenuToggle(isMenuOpened) {
     if (!isMenuOpened) {
       navRef.current.style.display = "none"
@@ -123,6 +128,8 @@ function Header() {
   }
 
   return (
+    <>
+        {/* <pre>{JSON.stringify(btnStyle)}</pre> */}
     <header className="header-sec fixed-nav" ref={headerRef}>
       <img className="logo" src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/us/en/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt="Kyndryl logo" />
       <nav className="navbar" ref={navRef}>
@@ -139,6 +146,7 @@ function Header() {
         {isMobileMenuOpen && <MenuClose />}
       </div>
     </header >
+    </>
 
   )
 }

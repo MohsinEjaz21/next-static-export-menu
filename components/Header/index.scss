@@ -260,7 +260,7 @@
 
     .nav__item {
       // height: 100%;
-      margin-top: calc(var(--nav-height) + 5px);
+      height: calc(var(--nav-height) + 10px);
       display: flex;
       align-items: center;
       z-index: 1;

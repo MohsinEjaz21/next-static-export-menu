@@ -1,7 +1,6 @@
 
 import MenuClose from "public/assets/icons/fa-mobile-close.svg";
 import MenuOpen from "public/assets/icons/fa-mobile-open.svg";
-import underlineSvg from 'public/assets/icons/underline.svg'
 
 import { useEffect, useRef, useState } from "react";
 import { MENU_DATA } from "../../MenuData";

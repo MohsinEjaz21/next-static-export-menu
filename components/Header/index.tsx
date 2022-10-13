@@ -11,6 +11,12 @@ const isMobile = () => {
   return !(window.innerWidth > MOBILE_BREAK_POINT);
 }
 
+function cropSVG(svgEl) {
+    // Get the bounds of the SVG content
+    const bbox = svgEl.getBBox();
+    // Set the viewport with these bounds
+    svgEl.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+}
 
 function CreateLink({ text,...props }) {
   const buttonRef: any = useRef(null);
@@ -81,6 +87,7 @@ function Header() {
   }
 
   useEffect(() => {
+    // cropSVG(underlineSvg);
     handleResize();
     window.addEventListener("resize", handleResize, false);
     return () => {

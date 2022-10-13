@@ -18,7 +18,7 @@ export const MENU_DATA = {
       text: 'Events',
       submenu: [
         {
-          text: 'Conference / Saminar'
+          text: 'Conference'
         },
         {
           text: 'IHD'

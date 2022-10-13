@@ -114,9 +114,11 @@ function Header() {
     if (!isMenuOpened) {
       navRef.current.style.display = "none"
       document.querySelector("main")!.style.display = "block"
+      // headerRef.current.className = "header-sec fixed-nav mobile"
     } else {
       navRef.current.style.display = "flex"
       document.querySelector("main")!.style.display = "none"
+      // headerRef.current.className = "header-sec mobile"
     }
   }
 

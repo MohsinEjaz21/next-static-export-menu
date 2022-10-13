@@ -8,6 +8,8 @@
   --transition: all 0.2s ease-in-out;
   --color-gray: rgba(0, 0, 0, 0.2);
 
+  box-shadow: var(--box-shadow-nav);
+
   .arrow {
     width: 10px;
     height: 10px;
@@ -90,6 +92,7 @@
   // &&&&&&&&&&&&&&
 
   &.mobile {
+    --box-shadow-nav : var(--box-shadow);
     display: grid;
     grid-auto-flow: column;
     height: 85px;
@@ -194,7 +197,6 @@
   // &&&&&&&&&&&&&&
 
   &.desktop {
-    box-shadow: var(--box-shadow-nav);
     display: grid;
     grid-auto-flow: column;
     flex-shrink: 0;

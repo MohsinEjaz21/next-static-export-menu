@@ -276,9 +276,9 @@
           height: 20px;
           position: absolute;
           visibility: visible;
-          width: 80px;
+          width: calc(100% - 30px);
           background-repeat: no-repeat;
-          background-image: url("/assets/icons/underline.svg");
+          background-image: url('/assets/icons/underline.svg');
           @extend .h-center-abs;
         }
       }

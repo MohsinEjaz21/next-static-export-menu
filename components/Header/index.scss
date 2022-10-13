@@ -203,7 +203,7 @@
     padding: 0 5%;
 
     .navbar {
-      height: 85px;
+      height: var(--nav-height);
       background: transparent;
       display: grid;
       grid-auto-flow: column;
@@ -231,7 +231,6 @@
       display: grid;
       grid-auto-flow: column;
       border-radius: 8px 8px 0px 0px;
-      margin-top: -5px;
     }
 
     .menu-list {
@@ -290,7 +289,7 @@
           position: absolute;
           display: flex;
           flex-direction: column;
-          top: 85px;
+          top: calc(var(--nav-height) + 5px);
         }
         > button {
           // background: var(--hover-bg);

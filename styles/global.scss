@@ -9,7 +9,7 @@
   --font-family-heading: "IBM Plex Sans", "Raleway", sans-serif;
   --font-family-body: "IBM Plex Sans", "Raleway", sans-serif;
   --header-anhor: #1d1d1d;
-  --nav-height: 85px;
+  --nav-height: 65px
 }
 
 * {
@@ -20,14 +20,14 @@
 }
 
 body{
-  --nav-height: 85px;
+  --nav-height: 65px;
   @include maxMedia(1025px) {
     --nav-height : 65px;
   }
 }
 
 main {
-  margin-top: calc(var(--nav-height) + 10px);
+  margin-top: calc(var(--nav-height) + 5px);
 }
 
 ::-webkit-scrollbar {

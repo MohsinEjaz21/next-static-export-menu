@@ -3,7 +3,7 @@ import MenuClose from "assets/icons/fa-mobile-close.svg";
 import MenuOpen from "assets/icons/fa-mobile-open.svg";
 
 import { useEffect, useRef, useState } from "react";
-import { MENU_DATA } from "./MenuData";
+import { MENU_DATA } from "../../MenuData";
 const MOBILE_BREAK_POINT = 1024;
 
 function CreateLink({ text, ...props }) {
@@ -91,7 +91,7 @@ function Index() {
         {menu.map((e, j) => {
           const uid = `${id}${j + 1}`;
           return (
-            <li className="menu-item" >
+            <li className="menu-item" key={uid} >
               <CreateLink text={e.text} iconRight={e?.submenu ? <i className="arrow-bottom" /> : null} />
               {e.submenu && <>{showMenu(e.submenu, uid, -1)}</>}
             </li>
@@ -113,7 +113,7 @@ function Index() {
       <img className="logo" src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/us/en/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt="Kyndryl logo" />
       <nav className="navbar" ref={navRef}>
         {data.menu.map((e, i) => (
-          <div className={`nav__item${e?.submenu ? ' nested' : ''}`} tabIndex={i}>
+          <div className={`nav__item${e?.submenu ? ' nested' : ''}`} key={i} tabIndex={i}>
             <CreateLink text={e.text}
               {...(e.submenu ? { iconRight: <i className="arrow-bottom" /> } : {})} />
             {e?.submenu && <>{showMenu(e.submenu)}</>}

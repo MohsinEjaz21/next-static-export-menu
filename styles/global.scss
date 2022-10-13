@@ -9,7 +9,7 @@
   --font-family-heading: "IBM Plex Sans", "Raleway", sans-serif;
   --font-family-body: "IBM Plex Sans", "Raleway", sans-serif;
   --header-anhor: #1d1d1d;
-  --nav-height: 65px
+  --nav-height: 70px;
 }
 
 * {
@@ -20,7 +20,7 @@
 }
 
 body{
-  --nav-height: 65px;
+  --nav-height: 70px;
   @include maxMedia(1025px) {
     --nav-height : 65px;
   }

@@ -244,6 +244,11 @@
       max-width: 200px;
       position: absolute;
       // border-radius: 8px;
+    //   border-radius : 8px 0 0 8px;
+
+    //  .menu-sub-list.visible:last-child{
+    //     border-radius : 0px 8px 8px 0px;
+    //   }
 
       .menu-button {
         margin-top: 0px;

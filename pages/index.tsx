@@ -3,15 +3,8 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
-// export const config={
-//   unstable_runtimeJS :false
-// }
-
 const Home: NextPage = () => {
-
   const [color,setColor] = useState('red');
-
-
   return (
     <div className={styles.container}>
       <Head>

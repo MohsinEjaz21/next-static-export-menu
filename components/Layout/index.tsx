@@ -6,7 +6,7 @@ import Script from 'next/script';
 function Layout({ children }) {
   return (
     <>
-      <Script src="/scripts/typetura.min.js"/>
+      <Script src="/assets/scripts/typetura.min.js"/>
       <Header />
       <main>
         {children}

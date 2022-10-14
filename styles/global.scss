@@ -12,6 +12,8 @@
   --box-shadow: var(--color-light) 0px 1px 1px 0px;
   --transition: all 0.2s ease-in-out;
 
+  // custom variables
+  --body-bg:linear-gradient(176deg,rgb(18,24,27) 50%,rgb(32,39,55) 100%);
 }
 
 * {
@@ -22,6 +24,9 @@
 }
 
 body {
+  // background: var(--body-bg);
+
+
   --nav-height: 70px;
   @include maxMedia(1025px) {
     --nav-height: 65px;

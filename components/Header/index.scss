@@ -156,7 +156,7 @@
         align-items: center;
         justify-content: space-between;
 
-        &.visited {
+        &.active {
           .arrow-bottom {
             transform: rotate(225deg) translateX(-5px);
           }

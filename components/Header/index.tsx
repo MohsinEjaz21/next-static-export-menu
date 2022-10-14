@@ -13,7 +13,7 @@ const isMobile = () => {
 
 function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
-  const [parentNode, setParentNode]: any = useState(null);
+
   function handleLinkClick() {
     if (isMobile()) {
       mobileHoverEvents(buttonRef);
@@ -22,29 +22,27 @@ function CreateLink({ text, ...props }) {
   }
 
   function handleLinkHover() {
-    mobileHoverEvents(buttonRef);
-    mobileHoverSubMenuBtn(buttonRef);
+    if (!isMobile()) {
+      mobileHoverEvents(buttonRef);
+      mobileHoverSubMenuBtn(buttonRef);
     calculateHeight();
+    }
   }
 
 
   function calculateHeight() {
     console.log("calc height")
     let height = 0;
-    const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested > .menu-list');
+    const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
 
     parentofNestedDropdown.forEach((elem: any) => {
       if (height != 0) {
         elem.style.height = 'auto';
       }
     })
-
-    if (parentofNestedDropdown != null) {
-      setParentNode(parentNode => parentNode = parentofNestedDropdown);
-    }
     console.log("parentofNestedDropdown", parentofNestedDropdown);
 
-    document.querySelectorAll(".menu-sub-list").forEach((elem: any) => {
+    document.querySelectorAll(".nav__item.nested.active .menu-sub-list").forEach((elem: any) => {
       height = Math.max(height, elem.scrollHeight);
       if (height != 0) {
         elem.style.height = `${height}px`;
@@ -61,8 +59,8 @@ function CreateLink({ text, ...props }) {
   return (
     <button className="menu-button" ref={buttonRef}
       onClick={() => { handleLinkClick() }}
-    // onMouseEnter={() => { handleLinkHover() }}
-    // onMouseLeave={() => { handleLinkHover() }}
+      // onMouseEnter={() => { handleLinkHover() }}
+      onMouseLeave={() => { handleLinkHover() }}
     >
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}
@@ -88,11 +86,11 @@ function mobileHoverSubMenuBtn(buttonRef: any) {
   console.log(buttonRef?.current);
   let subMenuBtnClass = buttonRef?.current?.className;
   if (subMenuBtnClass) {
-    if (subMenuBtnClass?.indexOf("visited") > -1) {
-      subMenuBtnClass = subMenuBtnClass.replace("visited", '');
+    if (subMenuBtnClass?.indexOf("active") > -1) {
+      subMenuBtnClass = subMenuBtnClass.replace("active", '');
       subMenuBtnClass = subMenuBtnClass.trim();
     } else {
-      subMenuBtnClass = subMenuBtnClass.trim() + " visited";
+      subMenuBtnClass = subMenuBtnClass.trim() + " active";
     }
     buttonRef.current.className = subMenuBtnClass;
   }
@@ -173,7 +171,7 @@ function Header() {
 
 
   function ForeachNavItem(props) {
-    const navItemRef:any = useRef(null);
+    const navItemRef: any = useRef(null);
 
     function onNavItemMouseHover() {
       console.log(navItemRef?.current);

@@ -11,20 +11,37 @@ const isMobile = () => {
 }
 
 
+function toggleClass(buttonRef: any, newClass="active") {
+  buttonRef.classList.toggle(newClass);
+
+  // console.log(buttonRef);
+  // let subMenuBtnClass = buttonRef?.className;
+  // if (subMenuBtnClass) {
+  //   if (subMenuBtnClass?.indexOf(newClass) > -1) {
+  //     subMenuBtnClass = subMenuBtnClass.replace(newClass, '');
+  //     subMenuBtnClass = subMenuBtnClass.trim();
+  //   } else {
+  //     subMenuBtnClass = subMenuBtnClass.trim() + ` ${newClass}`;
+  //   }
+  //   buttonRef.className = subMenuBtnClass;
+  // }
+}
+
+
 function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
 
   function handleLinkClick() {
     if (isMobile()) {
-      mobileHoverEvents(buttonRef);
-      mobileHoverSubMenuBtn(buttonRef);
+      toggleClass(buttonRef?.current);
+      toggleClass(buttonRef?.current?.nextSibling, "visible");
     }
   }
 
   function handleLinkHover() {
     if (!isMobile()) {
-      mobileHoverEvents(buttonRef);
-      mobileHoverSubMenuBtn(buttonRef);
+      toggleClass(buttonRef?.current);
+      toggleClass(buttonRef?.current?.nextSibling, "visible");
     calculateHeight();
     }
   }
@@ -68,33 +85,6 @@ function CreateLink({ text, ...props }) {
   );
 }
 
-function mobileHoverEvents(buttonRef: any) {
-  console.log(buttonRef?.current?.nextSibling);
-  let subMenuClass = buttonRef?.current?.nextSibling?.className;
-  if (subMenuClass) {
-    if (subMenuClass?.indexOf("visible") > -1) {
-      subMenuClass = subMenuClass.replace("visible", '');
-      subMenuClass = subMenuClass.trim();
-    } else {
-      subMenuClass = subMenuClass.trim() + " visible";
-    }
-    buttonRef.current.nextSibling.className = subMenuClass;
-  }
-}
-
-function mobileHoverSubMenuBtn(buttonRef: any) {
-  console.log(buttonRef?.current);
-  let subMenuBtnClass = buttonRef?.current?.className;
-  if (subMenuBtnClass) {
-    if (subMenuBtnClass?.indexOf("active") > -1) {
-      subMenuBtnClass = subMenuBtnClass.replace("active", '');
-      subMenuBtnClass = subMenuBtnClass.trim();
-    } else {
-      subMenuBtnClass = subMenuBtnClass.trim() + " active";
-    }
-    buttonRef.current.className = subMenuBtnClass;
-  }
-}
 
 
 

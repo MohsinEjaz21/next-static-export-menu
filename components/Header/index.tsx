@@ -14,6 +14,39 @@ function toggleClass(buttonRef: any, newClass = "active") {
   buttonRef?.classList?.toggle(newClass);
 }
 
+function calculateHeight() {
+  const parentNavGroup: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
+  const nestedNavGroup: any = document.querySelectorAll(".nav__item.nested.active .menu-sub-list");
+  resetHeight(parentNavGroup, nestedNavGroup);
+  adjustHeight(parentNavGroup, nestedNavGroup);
+
+  function resetHeight(parentNavGroup, nestedNavGroup) {
+    parentNavGroup.forEach((elem: any) => {
+      elem.style.height = 'auto';
+    })
+    nestedNavGroup.forEach((elem: any) => {
+      elem.style.height = 'auto';
+    })
+  }
+
+  function adjustHeight(parentNavGroup, nestedNavGroup) {
+    let height = 0;
+    nestedNavGroup.forEach((elem: any) => {
+      height = Math.max(height, elem.scrollHeight);
+      if (height != 0) {
+        elem.style.height = `${height}px`;
+      }
+    })
+
+    parentNavGroup.forEach((elem: any) => {
+      if (height != 0) {
+        elem.style.height = `${height}px`;
+      }
+    })
+  }
+}
+
+
 function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
 
@@ -29,43 +62,10 @@ function CreateLink({ text, ...props }) {
     if (!isMobile()) {
       toggleClass(buttonRef?.current, "active");
       toggleClass(buttonRef?.current?.nextSibling, "visible");
-      newFunction();
+      calculateHeight();
     }
   }
 
-
-  function newFunction() {
-    const parentNavGroup: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
-    const nestedNavGroup: any = document.querySelectorAll(".nav__item.nested.active .menu-sub-list");
-    resetHeight(parentNavGroup, nestedNavGroup);
-    calculateHeight(parentNavGroup, nestedNavGroup);
-  }
-
-
-  function resetHeight(parentNavGroup, nestedNavGroup) {
-    parentNavGroup.forEach((elem: any) => {
-      elem.style.height = 'auto';
-    })
-    nestedNavGroup.forEach((elem: any) => {
-      elem.style.height = 'auto';
-    })
-  }
-
-  function calculateHeight(parentNavGroup, nestedNavGroup) {
-    let height = 0;
-    nestedNavGroup.forEach((elem: any) => {
-      height = Math.max(height, elem.scrollHeight);
-      if (height != 0) {
-        elem.style.height = `${height}px`;
-      }
-    })
-
-    parentNavGroup.forEach((elem: any) => {
-      if (height != 0) {
-        elem.style.height = `${height}px`;
-      }
-    })
-  }
 
   return (
     <button className="menu-button" ref={buttonRef}
@@ -157,17 +157,7 @@ function Header() {
     const navItemRef: any = useRef(null);
 
     function onNavItemMouseHover() {
-      console.log(navItemRef?.current);
-      let subMenuBtnClass = navItemRef?.current?.className;
-      if (subMenuBtnClass) {
-        if (subMenuBtnClass?.indexOf("active") > -1) {
-          subMenuBtnClass = subMenuBtnClass.replace("active", '');
-          subMenuBtnClass = subMenuBtnClass.trim();
-        } else {
-          subMenuBtnClass = subMenuBtnClass.trim() + " active";
-        }
-        navItemRef.current.className = subMenuBtnClass;
-      }
+      toggleClass(navItemRef?.current, "active");
     }
 
 

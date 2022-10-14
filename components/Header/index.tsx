@@ -21,14 +21,17 @@ function CreateLink({ text,...props }) {
   const buttonRef: any = useRef(null);
 
   function handleLinkClick() {
-    if (isMobile()) {
+    // if (isMobile()) {
       mobileHoverEvents(buttonRef);
       mobileHoverSubMenuBtn(buttonRef);
-    }
+    // }
   }
 
   return (
-    <button className="menu-button" ref={buttonRef} onClick={() => { handleLinkClick() }}  >
+    <button className="menu-button" ref={buttonRef}
+    onClick={() => { handleLinkClick() }}
+    // onMouseEnter={() => { handleLinkClick() }}
+ >
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}
     </button>

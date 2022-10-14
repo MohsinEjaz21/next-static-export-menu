@@ -10,27 +10,59 @@ const isMobile = () => {
   return !(window.innerWidth > MOBILE_BREAK_POINT);
 }
 
-function cropSVG(svgEl) {
-    // Get the bounds of the SVG content
-    const bbox = svgEl.getBBox();
-    // Set the viewport with these bounds
-    svgEl.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
-}
 
 function CreateLink({ text,...props }) {
   const buttonRef: any = useRef(null);
-
+  const [parentNode , setParentNode]:any = useState(null);
   function handleLinkClick() {
-    // if (isMobile()) {
+    if (isMobile()) {
       mobileHoverEvents(buttonRef);
       mobileHoverSubMenuBtn(buttonRef);
-    // }
+    }
+  }
+
+  function handleLinkHover() {
+      mobileHoverEvents(buttonRef);
+      mobileHoverSubMenuBtn(buttonRef);
+      calculateHeight();
+  }
+
+
+  function calculateHeight(){
+    console.log("calc height")
+    let height =0;
+    const parentofNestedDropdown:any =  document.querySelectorAll('.nav__item.nested > .menu-list');
+
+      parentofNestedDropdown.forEach((elem:any)=>{
+      if(height !=0){
+         elem.style.height = 'auto';
+        }
+      })
+
+    if(parentofNestedDropdown != null){
+      setParentNode(parentNode => parentNode = parentofNestedDropdown);
+    }
+    console.log("parentofNestedDropdown",parentofNestedDropdown);
+
+    document.querySelectorAll(".menu-sub-list").forEach((elem:any)=>{
+      height = Math.max(height,elem.scrollHeight);
+      if(height !=0){
+      elem.style.height = `${height}px`;
+      }
+    })
+
+      parentofNestedDropdown.forEach((elem:any)=>{
+      if(height !=0){
+         elem.style.height = `${height}px`;
+        }
+      })
   }
 
   return (
     <button className="menu-button" ref={buttonRef}
     onClick={() => { handleLinkClick() }}
-    // onMouseEnter={() => { handleLinkClick() }}
+    onMouseEnter={() => { handleLinkHover() }}
+    onMouseLeave={() => { handleLinkHover() }}
  >
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}

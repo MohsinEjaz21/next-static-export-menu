@@ -346,9 +346,9 @@
       width: 106%;
       &:hover {
         > .menu-sub-list {
+          display: inline-table;
           &.visible{
-          display: block;
-          overflow-y: scroll;
+          // overflow-y: scroll;
 
           }
           // overflow: hidden;

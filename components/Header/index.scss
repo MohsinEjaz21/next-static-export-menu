@@ -3,11 +3,12 @@
 
   height: var(--nav-height);
   box-shadow: var(--box-shadow-dark);
+  --arrow-color : var(--color-dark);
 
   .arrow {
     width: 10px;
     height: 10px;
-    border: 1.3px solid var(--color-light);
+    border: 1.3px solid var(--arrow-color);
     border-left: 0;
     border-top: 0;
     transition: all 0.2s ease-out;
@@ -243,6 +244,7 @@
       //  .menu-sub-list.visible:last-child{
       //     border-radius : 0px 8px 8px 0px;
       //   }
+        --arrow-color:var(--color-light);
 
       .menu-button {
         margin-top: 0px;
@@ -250,8 +252,11 @@
         justify-content: space-between;
         width: 95%;
         padding: 5px;
+        padding-right: 10px;
         border-radius: 8px;
         &:hover {
+          --arrow-color:var(--color-dark);
+
           background-color: var(--color-light);
           .paragraph{
           color: var(--color-dark);
@@ -311,6 +316,10 @@
         > button {
           // background: var(--hover-bg);
 
+          > .arrow-bottom {
+            --arrow-color:var(--color-dark);
+          }
+
           &:before {
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -347,6 +356,9 @@
     .menu-item {
       // position: relative;
       width: 106%;
+      > button > .arrow-bottom {
+        // border: 1.3px solid var(--color-light);
+      }
       &:hover {
         > .menu-sub-list {
           display: inline-table;

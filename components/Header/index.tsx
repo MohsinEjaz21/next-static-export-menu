@@ -36,13 +36,15 @@ function CreateLink({ text, ...props }) {
 
 
   function resetHeight() {
-    const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
-    parentofNestedDropdown.forEach((elem: any) => {
+    const parentNavGroup: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
+    const nestedNavGroup: any = document.querySelectorAll(".nav__item.nested.active .menu-sub-list")
+    parentNavGroup.forEach((elem: any) => {
         elem.style.height = 'auto';
     })
-    document.querySelectorAll(".nav__item.nested.active .menu-sub-list").forEach((elem: any) => {
+        nestedNavGroup.forEach((elem: any) => {
         elem.style.height = 'auto';
     })
+
   }
 
   function calculateHeight() {

@@ -28,21 +28,27 @@ function CreateLink({ text, ...props }) {
     if (!isMobile()) {
       toggleClass(buttonRef?.current,"active");
       toggleClass(buttonRef?.current?.nextSibling, "visible");
+      resetHeight();
       calculateHeight();
     }
   }
 
 
+
+  function resetHeight() {
+    const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
+    parentofNestedDropdown.forEach((elem: any) => {
+        elem.style.height = 'auto';
+    })
+    document.querySelectorAll(".nav__item.nested.active .menu-sub-list").forEach((elem: any) => {
+        elem.style.height = 'auto';
+    })
+  }
+
   function calculateHeight() {
     console.log("calc height")
     let height = 0;
     const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
-
-    parentofNestedDropdown.forEach((elem: any) => {
-      if (height != 0) {
-        elem.style.height = 'auto';
-      }
-    })
     console.log("parentofNestedDropdown", parentofNestedDropdown);
 
     document.querySelectorAll(".nav__item.nested.active .menu-sub-list").forEach((elem: any) => {

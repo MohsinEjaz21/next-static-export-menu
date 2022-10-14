@@ -302,6 +302,7 @@
           // background-image: url("/assets/icons/underline.svg");
           background-image: url("https://raw.githubusercontent.com/MohsinEjaz21/next-static-export-menu/main/public/assets/icons/underline.svg");
           @extend .h-center-abs;
+          @include recolor(#00fa86, 0.8);
         }
       }
 

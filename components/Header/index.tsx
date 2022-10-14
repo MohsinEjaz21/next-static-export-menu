@@ -2,7 +2,7 @@
 import MenuClose from "public/assets/icons/fa-mobile-close.svg";
 import MenuOpen from "public/assets/icons/fa-mobile-open.svg";
 
-import { useEffect, useRef, useState } from "react";
+import { Ref, useEffect, useRef, useState } from "react";
 import { MENU_DATA } from "../../MenuData";
 const MOBILE_BREAK_POINT = 1024;
 
@@ -11,9 +11,9 @@ const isMobile = () => {
 }
 
 
-function CreateLink({ text,...props }) {
+function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
-  const [parentNode , setParentNode]:any = useState(null);
+  const [parentNode, setParentNode]: any = useState(null);
   function handleLinkClick() {
     if (isMobile()) {
       mobileHoverEvents(buttonRef);
@@ -22,48 +22,48 @@ function CreateLink({ text,...props }) {
   }
 
   function handleLinkHover() {
-      mobileHoverEvents(buttonRef);
-      mobileHoverSubMenuBtn(buttonRef);
-      calculateHeight();
+    mobileHoverEvents(buttonRef);
+    mobileHoverSubMenuBtn(buttonRef);
+    calculateHeight();
   }
 
 
-  function calculateHeight(){
+  function calculateHeight() {
     console.log("calc height")
-    let height =0;
-    const parentofNestedDropdown:any =  document.querySelectorAll('.nav__item.nested > .menu-list');
+    let height = 0;
+    const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested > .menu-list');
 
-      parentofNestedDropdown.forEach((elem:any)=>{
-      if(height !=0){
-         elem.style.height = 'auto';
-        }
-      })
-
-    if(parentofNestedDropdown != null){
-      setParentNode(parentNode => parentNode = parentofNestedDropdown);
-    }
-    console.log("parentofNestedDropdown",parentofNestedDropdown);
-
-    document.querySelectorAll(".menu-sub-list").forEach((elem:any)=>{
-      height = Math.max(height,elem.scrollHeight);
-      if(height !=0){
-      elem.style.height = `${height}px`;
+    parentofNestedDropdown.forEach((elem: any) => {
+      if (height != 0) {
+        elem.style.height = 'auto';
       }
     })
 
-      parentofNestedDropdown.forEach((elem:any)=>{
-      if(height !=0){
-         elem.style.height = `${height}px`;
-        }
-      })
+    if (parentofNestedDropdown != null) {
+      setParentNode(parentNode => parentNode = parentofNestedDropdown);
+    }
+    console.log("parentofNestedDropdown", parentofNestedDropdown);
+
+    document.querySelectorAll(".menu-sub-list").forEach((elem: any) => {
+      height = Math.max(height, elem.scrollHeight);
+      if (height != 0) {
+        elem.style.height = `${height}px`;
+      }
+    })
+
+    parentofNestedDropdown.forEach((elem: any) => {
+      if (height != 0) {
+        elem.style.height = `${height}px`;
+      }
+    })
   }
 
   return (
     <button className="menu-button" ref={buttonRef}
-    onClick={() => { handleLinkClick() }}
-    onMouseEnter={() => { handleLinkHover() }}
-    onMouseLeave={() => { handleLinkHover() }}
- >
+      onClick={() => { handleLinkClick() }}
+    // onMouseEnter={() => { handleLinkHover() }}
+    // onMouseLeave={() => { handleLinkHover() }}
+    >
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}
     </button>
@@ -97,6 +97,8 @@ function mobileHoverSubMenuBtn(buttonRef: any) {
     buttonRef.current.className = subMenuBtnClass;
   }
 }
+
+
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -168,16 +170,45 @@ function Header() {
     }
   }
 
+
+
+  function ForeachNavItem(props) {
+    const navItemRef:any = useRef(null);
+
+    function onNavItemMouseHover() {
+      console.log(navItemRef?.current);
+      let subMenuBtnClass = navItemRef?.current?.className;
+      if (subMenuBtnClass) {
+        if (subMenuBtnClass?.indexOf("active") > -1) {
+          subMenuBtnClass = subMenuBtnClass.replace("active", '');
+          subMenuBtnClass = subMenuBtnClass.trim();
+        } else {
+          subMenuBtnClass = subMenuBtnClass.trim() + " active";
+        }
+        navItemRef.current.className = subMenuBtnClass;
+      }
+    }
+
+
+    return (<div className={`nav__item${props.e?.submenu ? ' nested' : ''}`} tabIndex={props.i}
+      ref={navItemRef}
+      onMouseEnter={() => onNavItemMouseHover()}
+      onMouseLeave={() => onNavItemMouseHover()}>
+
+      <CreateLink text={props.e.text} {...props.e.submenu ? {
+        iconRight: <i className="arrow-bottom" />
+      } : {}} />
+      {props.e?.submenu && <>{showMenu(props.e.submenu)}</>}
+    </div>);
+  }
+
+
   return (
     <header className="header-sec fixed-nav" ref={headerRef}>
       <img className="logo" src="https://www.kyndryl.com/content/experience-fragments/kyndrylprogram/us/en/sites/header/master/_jcr_content/root/header_copy/image.coreimg.svg/1636019574172/kyndryl-logo.svg" alt="Kyndryl logo" />
       <nav className="navbar" ref={navRef}>
         {data.menu.map((e, i) => (
-          <div className={`nav__item${e?.submenu ? ' nested' : ''}`} key={i} tabIndex={i}>
-            <CreateLink text={e.text}
-              {...(e.submenu ? { iconRight: <i className="arrow-bottom" /> } : {})} />
-            {e?.submenu && <>{showMenu(e.submenu)}</>}
-          </div>
+          <ForeachNavItem key={i} e={e} i={i}></ForeachNavItem>
         ))}
       </nav>
       <div className="menu_mobile" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

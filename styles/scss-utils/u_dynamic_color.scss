@@ -1,0 +1,18 @@
+@function color($bg) {
+  @if(lightness($bg) > 50) {
+    @return var(--color-dark);
+  } @else {
+    @return var(--color-light);
+  }
+}
+
+@mixin dc($color) { // dc is short for dynamic color
+  background: $color;
+  color: text($color);
+}
+
+@mixin theme{
+  background: var(--color-dark);
+  color:  var(--color-light);
+}
+

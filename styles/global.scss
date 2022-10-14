@@ -1,19 +1,19 @@
 :root {
   --tt-base: 10;
+  --nav-height: 70px;
+
   // colors
   --color-dark: #1d1d1d;
   --color-light: #ffffff;
   --color-primary: rgb(255, 71, 44);
   --color-secondary: #6837ef;
 
-  // other
-  --font-family_1: "IBM Plex Sans", "Raleway", sans-serif;
-  --nav-height: 70px;
-  --box-shadow: var(--color-light) 0px 1px 1px 0px;
-  --transition: all 0.2s ease-in-out;
-
   // custom variables
+  --font-family_1: "IBM Plex Sans", "Raleway", sans-serif;
+  --box-shadow-light: var(--color-light) 0px 1px 1px 0px;
+  --box-shadow-dark: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   --body-bg:linear-gradient(176deg,rgb(18,24,27) 50%,rgb(32,39,55) 100%);
+  --transition: all 0.2s ease-in-out;
 }
 
 * {

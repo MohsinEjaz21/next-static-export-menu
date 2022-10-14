@@ -10,57 +10,57 @@ const isMobile = () => {
   return !(window.innerWidth > MOBILE_BREAK_POINT);
 }
 
-function toggleClass(buttonRef: any, newClass="active") {
+function toggleClass(buttonRef: any, newClass = "active") {
   buttonRef?.classList?.toggle(newClass);
 }
 
 function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
 
+
   function handleLinkClick() {
     if (isMobile()) {
-      toggleClass(buttonRef?.current,"active");
+      toggleClass(buttonRef?.current, "active");
       toggleClass(buttonRef?.current?.nextSibling, "visible");
     }
   }
 
   function handleLinkHover() {
     if (!isMobile()) {
-      toggleClass(buttonRef?.current,"active");
+      toggleClass(buttonRef?.current, "active");
       toggleClass(buttonRef?.current?.nextSibling, "visible");
-      resetHeight();
-      calculateHeight();
+      newFunction();
     }
   }
 
 
-
-  function resetHeight() {
+  function newFunction() {
     const parentNavGroup: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
-    const nestedNavGroup: any = document.querySelectorAll(".nav__item.nested.active .menu-sub-list")
-    parentNavGroup.forEach((elem: any) => {
-        elem.style.height = 'auto';
-    })
-        nestedNavGroup.forEach((elem: any) => {
-        elem.style.height = 'auto';
-    })
-
+    const nestedNavGroup: any = document.querySelectorAll(".nav__item.nested.active .menu-sub-list");
+    resetHeight(parentNavGroup, nestedNavGroup);
+    calculateHeight(parentNavGroup, nestedNavGroup);
   }
 
-  function calculateHeight() {
-    console.log("calc height")
-    let height = 0;
-    const parentofNestedDropdown: any = document.querySelectorAll('.nav__item.nested.active > .menu-list');
-    console.log("parentofNestedDropdown", parentofNestedDropdown);
 
-    document.querySelectorAll(".nav__item.nested.active .menu-sub-list").forEach((elem: any) => {
+  function resetHeight(parentNavGroup, nestedNavGroup) {
+    parentNavGroup.forEach((elem: any) => {
+      elem.style.height = 'auto';
+    })
+    nestedNavGroup.forEach((elem: any) => {
+      elem.style.height = 'auto';
+    })
+  }
+
+  function calculateHeight(parentNavGroup, nestedNavGroup) {
+    let height = 0;
+    nestedNavGroup.forEach((elem: any) => {
       height = Math.max(height, elem.scrollHeight);
       if (height != 0) {
         elem.style.height = `${height}px`;
       }
     })
 
-    parentofNestedDropdown.forEach((elem: any) => {
+    parentNavGroup.forEach((elem: any) => {
       if (height != 0) {
         elem.style.height = `${height}px`;
       }
@@ -70,7 +70,7 @@ function CreateLink({ text, ...props }) {
   return (
     <button className="menu-button" ref={buttonRef}
       onClick={() => { handleLinkClick() }}
-      onMouseLeave={() => { handleLinkHover() }}
+      onMouseEnter={() => { handleLinkHover() }}
     >
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}

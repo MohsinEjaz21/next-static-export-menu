@@ -10,6 +10,8 @@
   --font-family-body: "IBM Plex Sans", "Raleway", sans-serif;
   --header-anhor: #1d1d1d;
   --nav-height: 70px;
+
+  --box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 * {
@@ -19,10 +21,10 @@
   // background: rgb(0 100 0 / 0.1) !important;
 }
 
-body{
+body {
   --nav-height: 70px;
   @include maxMedia(1025px) {
-    --nav-height : 65px;
+    --nav-height: 65px;
   }
 }
 

@@ -295,6 +295,7 @@
           visibility: visible;
           width: calc(100% - 30px);
           background-repeat: no-repeat;
+          // background-image: url("/assets/icons/underline.svg");
           background-image: url("https://raw.githubusercontent.com/MohsinEjaz21/next-static-export-menu/main/public/assets/icons/underline.svg");
           @extend .h-center-abs;
         }

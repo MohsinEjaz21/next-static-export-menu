@@ -1,20 +1,15 @@
 .header-sec {
-  --color-primary: rgb(255, 71, 44);
-  --color-background: #fff;
   --box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  --box-shadow-nav: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  // --box-shadow-nav: 0 3px 10px rgb(0 0 0 / 0.2);
-  --hover-bg: rgba(35, 31, 32, 0.1);
   --transition: all 0.2s ease-in-out;
   --color-gray: rgba(0, 0, 0, 0.2);
 
   height: var(--nav-height);
-  box-shadow: var(--box-shadow-nav);
+  box-shadow: var(--box-shadow);
 
   .arrow {
     width: 10px;
     height: 10px;
-    border: 1.3px solid #333;
+    border: 1.3px solid var(--color-light);
     border-left: 0;
     border-top: 0;
     transition: all 0.2s ease-out;
@@ -82,7 +77,7 @@
   &.fixed-nav {
     top: 0px;
     position: fixed;
-    background: white;
+    background: var(--color-light);
     width: 100%;
   }
 
@@ -91,7 +86,7 @@
   // &&&&&&&&&&&&&&
 
   &.mobile {
-    --box-shadow-nav: var(--box-shadow);
+    --box-shadow: var(--box-shadow);
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
@@ -237,7 +232,8 @@
       padding: 10px;
       z-index: 1;
       box-shadow: var(--box-shadow);
-      background-color: var(--color-background);
+      color:var(--color-white);
+      background-color: var(--color-dark);
       margin: 0;
       display: none;
       width: 100%;
@@ -258,7 +254,13 @@
         padding: 5px;
         border-radius: 8px;
         &:hover {
-          background-color: var(--hover-bg);
+          background-color: var(--color-light);
+          .paragraph{
+          color: var(--color-dark);
+          }
+        }
+        .paragraph{
+        color:var(--color-light);
         }
       }
     }
@@ -328,8 +330,9 @@
       padding: 10px;
       display: none;
       height: 100%;
-      background-color: var(--color-background);
       box-shadow: var(--box-shadow);
+      color:var(--color-white);
+      background-color: var(--color-dark);
       // border-radius: 8px;
       position: absolute;
       left: 100%;

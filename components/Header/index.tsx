@@ -70,16 +70,12 @@ function CreateLink({ text, ...props }) {
   return (
     <button className="menu-button" ref={buttonRef}
       onClick={() => { handleLinkClick() }}
-      onMouseEnter={() => { handleLinkHover() }}
-    >
+      onMouseEnter={() => { handleLinkHover() }}>
       <p className="paragraph">{props.iconLeft}{text}</p>
       {props.iconRight}
     </button>
   );
 }
-
-
-
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -159,7 +155,6 @@ function Header() {
     function onNavItemMouseHover() {
       toggleClass(navItemRef?.current, "active");
     }
-
 
     return (<div className={`nav__item${props.e?.submenu ? ' nested' : ''}`} tabIndex={props.i}
       ref={navItemRef}

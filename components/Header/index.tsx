@@ -10,39 +10,25 @@ const isMobile = () => {
   return !(window.innerWidth > MOBILE_BREAK_POINT);
 }
 
-
 function toggleClass(buttonRef: any, newClass="active") {
-  buttonRef.classList.toggle(newClass);
-
-  // console.log(buttonRef);
-  // let subMenuBtnClass = buttonRef?.className;
-  // if (subMenuBtnClass) {
-  //   if (subMenuBtnClass?.indexOf(newClass) > -1) {
-  //     subMenuBtnClass = subMenuBtnClass.replace(newClass, '');
-  //     subMenuBtnClass = subMenuBtnClass.trim();
-  //   } else {
-  //     subMenuBtnClass = subMenuBtnClass.trim() + ` ${newClass}`;
-  //   }
-  //   buttonRef.className = subMenuBtnClass;
-  // }
+  buttonRef?.classList?.toggle(newClass);
 }
-
 
 function CreateLink({ text, ...props }) {
   const buttonRef: any = useRef(null);
 
   function handleLinkClick() {
     if (isMobile()) {
-      toggleClass(buttonRef?.current);
+      toggleClass(buttonRef?.current,"active");
       toggleClass(buttonRef?.current?.nextSibling, "visible");
     }
   }
 
   function handleLinkHover() {
     if (!isMobile()) {
-      toggleClass(buttonRef?.current);
+      toggleClass(buttonRef?.current,"active");
       toggleClass(buttonRef?.current?.nextSibling, "visible");
-    calculateHeight();
+      calculateHeight();
     }
   }
 
@@ -76,7 +62,6 @@ function CreateLink({ text, ...props }) {
   return (
     <button className="menu-button" ref={buttonRef}
       onClick={() => { handleLinkClick() }}
-      // onMouseEnter={() => { handleLinkHover() }}
       onMouseLeave={() => { handleLinkHover() }}
     >
       <p className="paragraph">{props.iconLeft}{text}</p>

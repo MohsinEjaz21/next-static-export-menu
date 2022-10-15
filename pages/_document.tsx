@@ -8,7 +8,7 @@ class Document extends NextDocument<Props> {
     return (
       <Html>
         <Head />
-        <body  data-barba="wrapper">
+        <body data-barba="wrapper">
           <Main/>
           <NextScript />
           <script type="module" src="/assets/scripts/dynamic-theme.js"/>

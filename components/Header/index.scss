@@ -229,7 +229,7 @@
     .menu-list {
       padding: 10px;
       z-index: 1;
-      box-shadow: var(--box-shadow-light);
+      box-shadow: var(--box-shadow);
       color:var(--color-white);
       background-color: var(--color-dark);
       margin: 0;
@@ -341,7 +341,7 @@
       padding: 10px;
       display: none;
       height: 100%;
-      box-shadow: var(--box-shadow-light);
+      box-shadow: var(--box-shadow);
       color:var(--color-white);
       background-color: var(--color-dark);
       // border-radius: 8px;

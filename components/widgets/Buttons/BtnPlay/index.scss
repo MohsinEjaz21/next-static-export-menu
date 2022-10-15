@@ -10,6 +10,8 @@
   border: none;
   opacity: 0.75;
   cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
   &:after {
     content: "";
     position: absolute;
@@ -42,6 +44,7 @@
     background: rgba(198, 16, 0, 0);
   }
   &:hover {
+    scale: 1.2;
     opacity: 1;
   }
 }

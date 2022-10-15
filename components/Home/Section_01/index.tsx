@@ -11,7 +11,7 @@ function Section_01() {
         <BtnPlay text={'About CASS'} handleClick={() => window.open("https://youtu.be/2JzP4MGeqDQ", '_blank')} />
       <div className="btn-group">
         <BtnPrimary text={'About CASS'} handleClick={() => window.open("https://www.youtube.com/channel/UCtJntJfsIcBLC9jJdqtA-kQ", '_blank')} />
-        <BtnDefault text={'About CASS'} handleClick={() => window.open("https://youtu.be/2JzP4MGeqDQ", '_blank')} />
+        {/* <BtnDefault text={'About CASS'} handleClick={() => window.open("https://youtu.be/2JzP4MGeqDQ", '_blank')} /> */}
         <img src="https://casstt.com/theme/site/img/utube3.png" />
       </div>
 

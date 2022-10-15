@@ -1,11 +1,11 @@
 import React from 'react'
 
-function BtnLight(props) {
+function BtnDefault(props) {
   return (
-    <button className="btn btn-01" onClick={props?.handleClick}>
+    <button className="btn" onClick={props?.handleClick}>
       <span className="btn-content"> {props?.text} </span>
     </button>
   )
 }
 
-export default BtnLight
+export default BtnDefault

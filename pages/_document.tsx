@@ -20,7 +20,7 @@ class Document extends NextDocument<Props> {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
           <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
-          <script src="/assets/scripts/locomotive-scroll.min.js"></script>
+          {/* <script src="/assets/scripts/locomotive-scroll.min.js"></script> */}
           <script defer src="/assets/scripts/index-new.js"></script>
 
         </body>

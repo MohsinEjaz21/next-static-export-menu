@@ -7,6 +7,7 @@
   --color-light: #ffffff;
   --color-primary: rgb(255, 71, 44);
   --color-secondary: #6837ef;
+  --color-gradient:  linear-gradient(82.3deg, var(--color-1) 10.8%, var(--color-2) 94.3%);
 
   // custom variables
   --font-family_1: "IBM Plex Sans", "Raleway", sans-serif;
@@ -160,7 +161,6 @@ section {
 }
 
 .btn {
-  min-width: 200px;
   font-family: var(--font-family_1);
   font-size: 1.5rem;
   max-width: 253px;

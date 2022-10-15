@@ -1,11 +1,28 @@
+
 .btn_primary {
+
+--color__1:  var(--color-1);
+ /*  7 */
+--color__3:  var(--color-light);
+ /*  7 */
+--color__2: var(--color-dark);
+ /*  1 */
+--color__5: rgba(255, 255, 255, 0.2);
+ /*  1 */
+
+  &:hover{
+    .btn-text{
+      color:var(--color-light);
+    }
+  }
+
   .btn.btn-normal {
     border-style: initial;
     border-width: 0;
     box-sizing: border-box;
-    display: inline-flex;
+
+    // display: inline-flex;
     margin-bottom: 0;
-    margin-right: 0.5em;
     outline: 0;
     position: relative;
     z-index: 5;
@@ -13,7 +30,7 @@
 
   @media screen and (max-width: 720px) {
     .btn.btn-normal {
-      margin: 0 0 0.75em;
+      margin: 0 0 0.75rem;
       width: 100%;
     }
   }
@@ -34,8 +51,8 @@
   }
 
   .btn.btn-normal:selection {
-    background-color: #455ce9;
-    color: #fff;
+    background-color: var(--color__1);
+    color: var(--color__3);
     text-shadow: none;
   }
 
@@ -45,25 +62,25 @@
 
   .btn-click.magnetic {
     align-items: center;
-    background-color: transparent;
-    border-radius: 2.125em;
+    background-color: var(--color__3);
+    border-radius: 5rem;
     border-style: initial;
     border-width: 0;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0 1px var(--color__5);
     box-sizing: border-box;
     color: undefined;
     cursor: pointer;
     display: flex;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 450;
-    height: 4.25em;
+    height: 6rem;
     justify-content: center;
     letter-spacing: normal;
     margin: 0;
-    min-width: 1em;
+    min-width: 1rem;
     outline: 0;
     overflow: hidden;
-    padding: 0;
+    padding: 0 3rem;
     position: relative;
     text-decoration: none;
     transform: rotate(0.001deg);
@@ -77,13 +94,13 @@
   }
 
   .btn-click.magnetic:selection {
-    background-color: #455ce9;
-    color: #fff;
+    background-color: var(--color__1);
+    color: var(--color__3);
     text-shadow: none;
   }
 
   .btn-fill {
-    background: #455ce9;
+    background: var(--color__1);
     border-radius: 50%;
     box-sizing: border-box;
     height: 200%;
@@ -97,22 +114,22 @@
   }
 
   .btn-fill:selection {
-    background-color: #455ce9;
-    color: #fff;
+    background-color: var(--color__1);
+    color: var(--color__3);
     text-shadow: none;
   }
 
   .btn-text {
     align-items: center;
     box-sizing: border-box;
-    color: #1c1d20;
+    color: var(--color__2);
     display: flex;
     font-weight: 450;
     height: 100%;
     justify-content: center;
     letter-spacing: normal;
     margin: 0;
-    padding: 0 2.5em;
+    padding: 0 2.5rem;
     pointer-events: none;
     position: relative;
     transform: rotate(0.001deg);
@@ -122,8 +139,8 @@
   }
 
   .btn-text:selection {
-    background-color: #455ce9;
-    color: #fff;
+    background-color: var(--color__1);
+    color: var(--color__3);
     text-shadow: none;
   }
 
@@ -139,28 +156,25 @@
   }
 
   .img-u_icon:selection {
-    background-color: #455ce9;
-    color: #fff;
+    background-color: var(--color__1);
+    color: var(--color__3);
     text-shadow: none;
   }
 
   .btn-text-inner.change {
     box-sizing: border-box;
-    color: #fff !important;
+    color: var(--color-dark);
     font-weight: 450;
     letter-spacing: normal;
     margin: 0;
     padding: 0;
+    font-size: 14px;
   }
 
   .btn-text-inner.change:selection {
-    background-color: #455ce9;
-    color: #fff;
+    background-color: var(--color__1);
+    color: var(--color__3);
     text-shadow: none;
   }
 
-  .inherited-styles-for-exported-element {
-    font-size: clamp(16px, 1.2vw, 19px);
-    line-height: 1.6;
-  }
 }

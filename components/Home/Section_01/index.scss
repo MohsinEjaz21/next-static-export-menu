@@ -3,6 +3,8 @@
   grid-auto-flow: row;
   align-content: center;
   height: calc(100vh - (var(--nav-height) + 5px));
+  justify-items:center;
+  row-gap:2rem;
   .paragraph,
   .h-medium {
     text-align: center;

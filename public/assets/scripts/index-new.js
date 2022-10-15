@@ -1,6 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 let scroll;
+console.log("HELL WORLD")
 
 const body = document.body;
 const select = (e) => document.querySelector(e);
@@ -8,7 +9,7 @@ const selectAll = (e) => document.querySelectorAll(e);
 //const container = select('.site-main');
 
 initPageTransitions();
-
+initMagneticButtons();
 // Animation - First Page Load
 function initLoaderHome() {
 
@@ -522,7 +523,7 @@ function initScript() {
   initPlayVideoInview();
   initScrolltriggerAnimations();
   makeHtmlVisible()
-    console.log("all initialized")
+  console.log("all initialized")
 }
 
 /**
@@ -611,7 +612,7 @@ function initHamburgerNav() {
 * Magnetic Buttons
 */
 function initMagneticButtons() {
-
+  console.log("Mouse Events")
   // Magnetic Buttons
   // Found via: https://codepen.io/tdesero/pen/RmoxQg
   var magnets = document.querySelectorAll('.magnetic');
@@ -621,6 +622,8 @@ function initMagneticButtons() {
   if (window.innerWidth > 540) {
     // Mouse Reset
     magnets.forEach((magnet) => {
+              console.log("magnets",magnets)
+
       magnet.addEventListener('mousemove', moveMagnet);
       $(this.parentNode).removeClass('not-active');
       magnet.addEventListener('mouseleave', function (event) {

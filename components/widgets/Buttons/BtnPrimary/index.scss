@@ -1,5 +1,5 @@
 .btn_primary {
-  .div-btn-btn-normal {
+  .btn.btn-normal {
     border-style: initial;
     border-width: 0;
     box-sizing: border-box;
@@ -12,38 +12,38 @@
   }
 
   @media screen and (max-width: 720px) {
-    .div-btn-btn-normal {
+    .btn.btn-normal {
       margin: 0 0 0.75em;
       width: 100%;
     }
   }
 
-  .a-btn-click-magnetic:after,
-  .a-btn-click-magnetic:before,
-  .div-btn-btn-normal:after,
-  .div-btn-btn-normal:before,
-  .div-btn-fill:after,
-  .div-btn-fill:before,
+  .btn-click.magnetic:after,
+  .btn-click.magnetic:before,
+  .btn.btn-normal:after,
+  .btn.btn-normal:before,
+  .btn-fill:after,
+  .btn-fill:before,
   .img-u_icon:after,
   .img-u_icon:before,
-  .span-btn-text-inner-change:after,
-  .span-btn-text-inner-change:before,
-  .span-btn-text:after,
-  .span-btn-text:before {
+  .btn-text-inner.change:after,
+  .btn-text-inner.change:before,
+  .btn-text:after,
+  .btn-text:before {
     box-sizing: border-box;
   }
 
-  .div-btn-btn-normal:selection {
+  .btn.btn-normal:selection {
     background-color: #455ce9;
     color: #fff;
     text-shadow: none;
   }
 
-  .div-btn-btn-normal:hover {
+  .btn.btn-normal:hover {
     z-index: 15;
   }
 
-  .a-btn-click-magnetic {
+  .btn-click.magnetic {
     align-items: center;
     background-color: transparent;
     border-radius: 2.125em;
@@ -71,18 +71,18 @@
   }
 
   @media screen and (max-width: 720px) {
-    .a-btn-click-magnetic {
+    .btn-click.magnetic {
       width: 100%;
     }
   }
 
-  .a-btn-click-magnetic:selection {
+  .btn-click.magnetic:selection {
     background-color: #455ce9;
     color: #fff;
     text-shadow: none;
   }
 
-  .div-btn-fill {
+  .btn-fill {
     background: #455ce9;
     border-radius: 50%;
     box-sizing: border-box;
@@ -96,13 +96,13 @@
     will-change: transform;
   }
 
-  .div-btn-fill:selection {
+  .btn-fill:selection {
     background-color: #455ce9;
     color: #fff;
     text-shadow: none;
   }
 
-  .span-btn-text {
+  .btn-text {
     align-items: center;
     box-sizing: border-box;
     color: #1c1d20;
@@ -121,7 +121,7 @@
     z-index: 2;
   }
 
-  .span-btn-text:selection {
+  .btn-text:selection {
     background-color: #455ce9;
     color: #fff;
     text-shadow: none;
@@ -144,7 +144,7 @@
     text-shadow: none;
   }
 
-  .span-btn-text-inner-change {
+  .btn-text-inner.change {
     box-sizing: border-box;
     color: #fff !important;
     font-weight: 450;
@@ -153,7 +153,7 @@
     padding: 0;
   }
 
-  .span-btn-text-inner-change:selection {
+  .btn-text-inner.change:selection {
     background-color: #455ce9;
     color: #fff;
     text-shadow: none;

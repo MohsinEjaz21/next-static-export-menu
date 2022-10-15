@@ -7,7 +7,7 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <main>
+      <main data-barba="container">
         {children}
       </main>
     </>

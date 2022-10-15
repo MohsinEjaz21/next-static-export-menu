@@ -1,6 +1,7 @@
 import React from 'react'
 import BtnDefault from '../../widgets/Buttons/BtnDefault'
 import BtnPlay from '../../widgets/Buttons/BtnPlay'
+import BtnPrimary from '../../widgets/Buttons/BtnPrimary'
 
 function Section_01() {
   return (
@@ -10,8 +11,10 @@ function Section_01() {
       <BtnPlay text={'About CASS'} handleClick={() => window.open("https://www.youtube.com/channel/UCtJntJfsIcBLC9jJdqtA-kQ", '_blank')} />
       <div className="btn-group">
         <BtnDefault text={'About CASS'} handleClick={() => window.open("https://youtu.be/2JzP4MGeqDQ", '_blank')} />
-        <img src="https://casstt.com/theme/site/img/utube3.png" alt="utube3" />
+        <img src="https://casstt.com/theme/site/img/utube3.png"  />
       </div>
+      <BtnPrimary/>
+
     </section>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import BtnPrimary from '../widgets/Buttons/BtnPrimary'
 import Section_01 from './Section_01'
 
 function Home() {

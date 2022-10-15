@@ -1,0 +1,24 @@
+.section_01 {
+  display: grid;
+  grid-auto-flow: row;
+  align-content: center;
+  height: calc(100vh - (var(--nav-height) + 5px));
+  .paragraph,
+  .h-medium {
+    text-align: center;
+    color: var(--color-light);
+  }
+
+  .h-medium{
+    text-transform: uppercase;
+    span{
+    color: var(--color-1);
+    }
+  }
+  .paragraph{
+    opacity: 0.75;
+  }
+
+  justify-content: center;
+  background-color: var(--color-dark);
+}

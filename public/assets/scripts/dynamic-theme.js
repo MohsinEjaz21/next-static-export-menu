@@ -78,7 +78,7 @@ function generate() {
   });
 }
 
-// generate();
+generate();
 
 // setInterval(() => {
 //   generate();

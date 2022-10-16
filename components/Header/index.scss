@@ -25,13 +25,13 @@
   .hidden {
     visibility: hidden;
     height: 0;
-    z-index: -1;
+    //z-index: -1;
     overflow: hidden;
   }
 
   .visible {
     visibility: visible;
-    z-index: 1;
+    //z-index: 1;
     overflow: visible;
     height: auto;
   }
@@ -230,7 +230,7 @@
 
     .menu-list {
       padding: 10px;
-      z-index: 1;
+      //z-index: 1;
       box-shadow: var(--box-shadow);
       color:var(--color-white);
       background-color: var(--color-dark);
@@ -274,7 +274,7 @@
       height: calc(var(--nav-height) + 10px);
       display: flex;
       align-items: center;
-      z-index: 1;
+      //z-index: 1;
       // position: relative;
 
       &.nested ul.menu-list {
@@ -349,7 +349,7 @@
       // border-radius: 8px;
       position: absolute;
       left: 100%;
-      z-index: 100;
+      //z-index: 100;
       width: 100%;
       top: 0;
       flex-direction: column;

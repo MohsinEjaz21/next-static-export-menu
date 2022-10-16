@@ -25,7 +25,7 @@
     margin-bottom: 0;
     outline: 0;
     position: relative;
-    z-index: 5;
+    //z-index: 5;
   }
 
   @media screen and (max-width: 720px) {
@@ -57,7 +57,7 @@
   }
 
   .btn.btn-normal:hover {
-    z-index: 15;
+    //z-index: 15;
   }
 
   .btn-click.magnetic {
@@ -137,7 +137,7 @@
     transform: rotate(0.001deg);
     width: 100%;
     will-change: transform, color;
-    z-index: 2;
+    //z-index: 2;
   }
 
   .btn-text:selection {

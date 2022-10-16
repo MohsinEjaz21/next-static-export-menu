@@ -6,15 +6,9 @@ import BtnPrimary from '../../widgets/Buttons/BtnPrimary'
 function Section_02() {
   return (
     <section className="section_02">
-      <h1 className="h-medium">Centre for <span>Aerospace</span> & <br />  <span>Security</span> Studies</h1>
-      <p className="paragraph">An independent analysis on Aerospace and International Security Issues</p>
-        <BtnPlay text={'About CASS'} class="magnet" handleClick={() => window.open("https://youtu.be/2JzP4MGeqDQ", '_blank')} />
-      <div className="btn-group">
-        <BtnPrimary text={'About CASS'} handleClick={() => window.open("https://www.youtube.com/channel/UCtJntJfsIcBLC9jJdqtA-kQ", '_blank')} />
-        {/* <BtnDefault text={'About CASS'} handleClick={() => window.open("https://youtu.be/2JzP4MGeqDQ", '_blank')} /> */}
-        <BtnPrimary text="YOUTUBE" image={<div className="icons8-youtube"></div>}/>
-
-      </div>
+    <p className="paragraph">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur architecto soluta ipsum aspernatur numquam dolore est praesentium, deleniti iusto amet neque expedita. Unde asperiores corrupti quam cumque quae. Expedita ipsum illo quod ducimus minima, delectus corporis earum debitis porro quibusdam saepe optio temporibus omnis mollitia? Impedit labore unde, minus obcaecati maxime consectetur sed, dicta dolorem esse rem quidem cupiditate veritatis expedita. Nesciunt alias cupiditate nostrum repellendus reiciendis tenetur at nihil adipisci veritatis, est consequatur. Impedit temporibus error iure eius ipsum earum reprehenderit labore cupiditate. Aperiam, pariatur, harum magni ullam accusamus accusantium aut voluptatem animi delectus assumenda omnis. Natus, laudantium aperiam sit nihil facere tenetur distinctio mollitia perspiciatis vero qui ab? Ea ad odit similique? Veritatis praesentium, sunt nesciunt rerum autem dolores molestias rem labore eveniet esse, illum corporis natus dolore mollitia soluta. Repellat provident necessitatibus modi assumenda autem omnis eligendi aliquid repellendus illo veniam placeat pariatur cum consequatur praesentium sequi nobis ipsam minima, veritatis molestias vero officia labore reprehenderit. In, vel! Eveniet beatae nemo sit accusamus sunt molestias nulla optio tempore, temporibus aliquid corrupti soluta minus modi laudantium neque aspernatur repellat velit, placeat sapiente voluptatum commodi doloribus possimus mollitia tenetur. Quod assumenda nam voluptatum id cum itaque atque error qui.
+    </p>
 
     </section>
   )

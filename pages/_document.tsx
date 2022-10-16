@@ -13,6 +13,7 @@ class Document extends NextDocument<Props> {
           <NextScript />
           <script type="module" src="assets/scripts/dynamic-theme.js"/>
           <script type="text/javascript" src="assets/scripts/typetura.min.js"/>
+          <script type="text/javascript" src="assets/scripts/custom-magnet.js"/>
 
           <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>

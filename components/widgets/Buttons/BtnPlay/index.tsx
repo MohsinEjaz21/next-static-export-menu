@@ -2,7 +2,7 @@ import React from 'react'
 
 function BtnPlay(props) {
   return (
-    <button className="play-btn" onClick={props?.handleClick}/>
+    <button className={`play-btn ${props.class ? props.class : ''}`} onClick={props?.handleClick}/>
   )
 }
 

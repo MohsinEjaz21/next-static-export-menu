@@ -3,6 +3,8 @@
 
   height: var(--nav-height);
   box-shadow: var(--box-shadow-dark);
+  height: var(--nav-height);
+      z-index: 1;
 
   .arrow {
     width: 10px;
@@ -35,7 +37,7 @@
   }
 
   .logo {
-    width: 100px;
+    width: 200px;
   }
 
   .v-center-abs {

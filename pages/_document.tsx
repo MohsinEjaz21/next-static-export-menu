@@ -11,8 +11,8 @@ class Document extends NextDocument<Props> {
         <body data-barba="wrapper">
           <Main/>
           <NextScript />
-          <script type="module" src="/assets/scripts/dynamic-theme.js"/>
-          <script type="text/javascript" src="/assets/scripts/typetura.min.js"/>
+          <script type="module" src="assets/scripts/dynamic-theme.js"/>
+          <script type="text/javascript" src="assets/scripts/typetura.min.js"/>
 
           <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
@@ -21,7 +21,7 @@ class Document extends NextDocument<Props> {
           <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
           <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
           {/* <script src="/assets/scripts/locomotive-scroll.min.js"></script> */}
-          <script defer src="/assets/scripts/index-new.js"></script>
+          <script defer src="assets/scripts/index-new.js"></script>
 
         </body>
       </Html>

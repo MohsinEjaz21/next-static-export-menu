@@ -12,7 +12,7 @@
   &:before {
     content: "";
     position: fixed;
-    background:rgb(1, 1, 1,0.7);
+    background:rgb(1, 1, 1,0.8);
     top:var(--nav-height);
     left:0;
     height: 100%;
@@ -56,6 +56,10 @@
   }
 
     }
+  }
+
+  .play-btn{
+    z-index: 1;
   }
 
   .icons8-youtube {

@@ -1,8 +1,26 @@
+import React from "react";
+import Loader from "../components/Loader";
 import 'index.scss'
-import type { AppProps } from 'next/app'
 
-function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  const [loading, setLoading] = React.useState(false);
+
+  React.useLayoutEffect(() => {
+     setLoading(true)
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  return (
+    <>
+      {!loading ? (
+        <React.Fragment>
+          <Component {...pageProps} />
+        </React.Fragment>
+      ) : (
+        <Loader />
+      )}
+    </>
+  );
 }
 
-export default App
+export default MyApp

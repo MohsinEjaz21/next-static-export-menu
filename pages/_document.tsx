@@ -8,7 +8,7 @@ class Document extends NextDocument<Props> {
     return (
       <Html>
         <Head />
-        <body data-barba="wrapper">
+        <body data-scroll-container data-barba="wrapper">
           <Main/>
           <NextScript />
           <script type="module" src="assets/scripts/dynamic-theme.js"/>
@@ -23,6 +23,7 @@ class Document extends NextDocument<Props> {
           <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
           {/* <script src="/assets/scripts/locomotive-scroll.min.js"></script> */}
           <script defer src="assets/scripts/index-new.js"></script>
+          <script defer type="module" src="assets/scripts/locomotive-scroll.js"></script>
 
         </body>
       </Html>

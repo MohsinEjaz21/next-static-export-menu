@@ -1,11 +1,11 @@
-import React from "react";
+import 'index.scss';
+import React, { useLayoutEffect } from "react";
 import Loader from "../components/Loader";
-import 'index.scss'
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(false);
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
      setLoading(true)
     setTimeout(() => setLoading(false), 2000);
   }, []);

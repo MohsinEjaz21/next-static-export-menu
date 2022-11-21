@@ -1,5 +1,5 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import React from 'react'
+/* eslint-disable @next/next/no-sync-scripts */
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 
 type Props = {}
 
@@ -9,11 +9,11 @@ class Document extends NextDocument<Props> {
       <Html>
         <Head />
         <body data-scroll-container data-barba="wrapper">
-          <Main/>
+          <Main />
           <NextScript />
-          <script type="module" src="assets/scripts/dynamic-theme.js"/>
-          <script type="text/javascript" src="assets/scripts/typetura.min.js"/>
-          <script type="text/javascript" src="assets/scripts/custom-magnet.js"/>
+          <script type="module" src="assets/scripts/dynamic-theme.js" />
+          <script type="text/javascript" src="assets/scripts/typetura.min.js" />
+          <script type="text/javascript" src="assets/scripts/custom-magnet.js" />
 
           <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>

@@ -232,7 +232,7 @@
       padding: 10px;
       //z-index: 1;
       box-shadow: var(--box-shadow);
-      color:var(--color-white);
+      color: var(--color-white);
       background-color: var(--color-dark);
       margin: 0;
       display: none;
@@ -245,7 +245,7 @@
       //  .menu-sub-list.visible:last-child{
       //     border-radius : 0px 8px 8px 0px;
       //   }
-        --arrow-color:var(--color-light);
+      --arrow-color: var(--color-light);
 
       .menu-button {
         margin-top: 0px;
@@ -256,15 +256,15 @@
         padding-right: 10px;
         border-radius: 8px;
         &:hover {
-          --arrow-color:var(--color-dark);
+          --arrow-color: var(--color-dark);
 
           background-color: var(--color-light);
-          .paragraph{
-          color: var(--color-dark);
+          .paragraph {
+            color: var(--color-dark);
           }
         }
-        .paragraph{
-        color:var(--color-light);
+        .paragraph {
+          color: var(--color-light);
         }
       }
     }
@@ -306,9 +306,8 @@
           @extend .h-center-abs;
           background-color: var(--color-dark);
           mask-image: url("https://raw.githubusercontent.com/MohsinEjaz21/next-static-export-menu/main/public/assets/icons/underline.svg");
-          // @include recolor(#00fa86, 0.8);
+          // @include recolor(#1d1d1d, 1);
           // @include recolor(#1d1d1d, 0.8);
-
         }
       }
 
@@ -323,7 +322,7 @@
           // background: var(--hover-bg);
 
           > .arrow-bottom {
-            --arrow-color:var(--color-dark);
+            --arrow-color: var(--color-dark);
           }
 
           &:before {
@@ -344,7 +343,7 @@
       display: none;
       height: 100%;
       box-shadow: var(--box-shadow);
-      color:var(--color-white);
+      color: var(--color-white);
       background-color: var(--color-dark);
       // border-radius: 8px;
       position: absolute;
@@ -368,13 +367,10 @@
       &:hover {
         > .menu-sub-list {
           display: inline-table;
-          &.visible{
-          // overflow-y: scroll;
-
+          &.visible {
+            // overflow-y: scroll;
           }
           // overflow: hidden;
-
-
 
           :last-child {
             // display: block;

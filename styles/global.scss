@@ -7,18 +7,17 @@
 
   --color-dark: #0d182c;
   --color-light: #ffffff;
-  --color-1: rgb(25, 65, 47);
-  --color-2: #00203FFF;
+  --color-1: #f42352;
+  --color-2: rgb(25, 65, 47);
 
-
-  --color-gradient:  linear-gradient(82.3deg, var(--color-1) 10.8%, var(--color-2) 94.3%);
+  --color-gradient: linear-gradient(82.3deg, var(--color-1) 10.8%, var(--color-2) 94.3%);
 
   // custom variables
-  --font-family_1: "IBM Plex Sans", "Raleway","Roboto", sans-serif;
+  --font-family_1: "IBM Plex Sans", "Raleway", "Roboto", sans-serif;
   --box-shadow-light: var(--color-light) 0px 0px 1px 0px;
   --box-shadow-dark: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  --arrow-color : var(--color-dark);
-  --body-bg:linear-gradient(176deg,rgb(18,24,27) 50%,rgb(32,39,55) 100%);
+  --arrow-color: var(--color-dark);
+  --body-bg: linear-gradient(176deg, rgb(18, 24, 27) 50%, rgb(32, 39, 55) 100%);
   --transition: all 0.2s ease-in-out;
   --box-shadow: var(--color-dark) 0px 0px 1px 0px;
 }
@@ -30,7 +29,8 @@
   // background: rgb(0 100 0 / 0.1) !important;
 }
 
-button , a{
+button,
+a {
   cursor: pointer;
 }
 
@@ -49,18 +49,18 @@ body {
   @include maxMedia(1025px) {
     --nav-height: 65px;
   }
-    &.dark{
-  --color-dark: #ffffff;
-  --color-light: #000000;
-  --box-shadow: var(--box-shadow-light)
+  &.dark {
+    --color-dark: #ffffff;
+    --color-light: #000000;
+    --box-shadow: var(--box-shadow-light);
   }
 }
 
 main {
-  &:before{
-  width: 100%;
-  display: block;
-  height: calc(var(--nav-height) + 10px);
+  &:before {
+    width: 100%;
+    display: block;
+    height: calc(var(--nav-height) + 10px);
   }
 }
 
@@ -71,17 +71,15 @@ main {
   background: transparent !important;
 }
 
-
 .dark-overlay {
   content: "";
   position: fixed;
-  background:rgb(1, 1, 1,0.7);
-  top:0px;
-  left:0;
+  background: rgb(1, 1, 1, 0.7);
+  top: 0px;
+  left: 0;
   height: 100%;
   width: 100%;
 }
-
 
 .w-700 {
   font-weight: 700;
